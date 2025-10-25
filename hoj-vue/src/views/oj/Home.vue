@@ -99,8 +99,8 @@
               :key="index"
               class="contest-card"
               :class="contest.status == 0
-                  ? 'contest-card-running'
-                  : 'contest-card-schedule'
+                ? 'contest-card-running'
+                : 'contest-card-schedule'
                 ">
               <div
                 slot="header"
@@ -238,7 +238,7 @@
             <el-col :md="8" :sm="24" v-for="(oj, index) in remoteJudgeList" :key="index">
               <a :href="oj.url" target="_blank">
                 <el-tooltip :content="oj.name" placement="top">
-                  <el-image :src="oj.logo" fit="fill" class="oj-logo" :class="oj.status ? 'oj-normal ' + oj.name : 'oj-error ' + oj.name
+                  <el-image :src="oj.logo" fit="contain" class="oj-logo" :class="oj.status ? 'oj-normal ' + oj.name : 'oj-error ' + oj.name
                     ">
                     <div slot="error" class="image-slot">
                       <i class="el-icon-picture-outline"></i>
